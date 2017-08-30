@@ -1,0 +1,16 @@
+{
+  "name": "oryx",
+  "version": "0.0.0",
+  "description": "Markdown note taking app inspired by bear",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "markdown",
+    "notes",
+    "editor"
+  ],
+  "author": "wingillis",
+  "license": "ISC"
+}
