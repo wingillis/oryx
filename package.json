@@ -6,7 +6,7 @@
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e main.js -o dist/build.js",
     "serve": "http-server -o -c 1 -a localhost",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "dev": "npm-run-all --parallel watchify serve"
   },
   "keywords": [
@@ -27,7 +27,9 @@
     "browserify": "^14.4.0",
     "browserify-hmr": "^0.3.5",
     "codemirror": "^5.29.0",
+    "mocha": "^3.5.0",
     "npm-run-all": "^4.1.1",
+    "uuid": "^3.1.0",
     "watchify": "^3.9.0"
   },
   "dependencies": {
