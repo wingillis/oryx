@@ -7,3 +7,25 @@
 .cm-header-6 { font-size: 1.15em; }
 
 .cm-quote { color: #90a959; font-style: italic; }
+
+.inline-img {
+  width: 30%;
+}
+
+.window-container {
+  display: flex;
+}
+
+div.codeMirror {
+  flex-grow: 1;
+  height: 100%;
+}
+
+
+.window-tags {
+  position: relative;
+  width: 17%;
+  min-width: 130px;
+  background-color: white;
+  height: 100%;
+}
