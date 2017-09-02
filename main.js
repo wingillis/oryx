@@ -8,6 +8,7 @@ const imageHandler = require('./lib/images');
 const uuid = require('uuid/v4'); // random uuid
 const Editor = require('./lib/editor');
 const SearchBar = require('./lib/search');
+// const {ipcRenderer} = require('electron');
 
 // singleton
 const db = require('./lib/db');
@@ -15,6 +16,7 @@ const db = require('./lib/db');
 // NOTE: this current implementation runs in the browser. This is not a good
 // idea when an electron app - it needs to be node and file-based
 db.open()
+
 
 
 let editor = new Editor('code');
