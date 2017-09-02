@@ -63,6 +63,10 @@ div.codeMirror {
   margin-bottom: 8px;
 }
 
+#search-bar:focus {
+  outline: none;
+}
+
 #search-bar::-webkit-input-placeholder {
   color: #bbbbbb;
 }
