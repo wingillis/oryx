@@ -1,5 +1,5 @@
 
-const text = require('../lib/lib-text');
+const text = require('../lib/text');
 const assert = require('assert');
 
 describe('text', function () {
@@ -11,6 +11,8 @@ describe('text', function () {
       eqs[str.indexOf('#tag')] = '#tag';
       assert.deepEqual(eqs, out);
     });
+
+    // TODO: add multiple tags
   });
 
   describe('find img tag', function () {
@@ -21,6 +23,8 @@ describe('text', function () {
       eqs[str.indexOf('![img](test)')] = 'test';
       assert.deepEqual(eqs, out);
     });
+
+    // TODO: add multiple tags
   });
 
 });

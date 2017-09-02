@@ -1,12 +1,15 @@
 
+// don't need no refs
 require('codemirror/mode/gfm/gfm');
 require('codemirror/mode/javascript/javascript');
 require('codemirror/keymap/vim');
-const codeMirror = require('codemirror');
+
 const imageHandler = require('./lib/images');
-const textLib = require('./lib/lib-text');
 const PouchDb = require('pouchdb');
 const uuid = require('uuid/v4'); // random uuid
+
+// start db
+let db = new PouchDb('texts');
 
 
 function update(editor) {
@@ -34,19 +37,6 @@ function update(editor) {
   }
 }
 
-// start db
-let db = new PouchDb('texts');
-
-let editor = codeMirror.fromTextArea(document.getElementById('code'),
-  {
-    mode: "gfm",
-    theme: 'base16-dark',
-    lineWrapping: true,
-    matchBrackets: true,
-    lineNumbers: true,
-    keyMap: 'vim'
-});
-
 function getAllTags () {
 
 }
@@ -54,6 +44,8 @@ function getAllTags () {
 function listTags () {
 
 }
+
+// on new document, add db entry
 
 // add a 1 sec debounce for adding tags
 var debounceFunc;
@@ -63,5 +55,3 @@ function addTag(tag) {
     // pass (for now)
   }, 1000);
 }
-
-editor.on('change', update);
