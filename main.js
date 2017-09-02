@@ -10,8 +10,6 @@ const uuid = require('uuid/v4'); // random uuid
 const Editor = require('./lib/editor');
 const SearchBar = require('./lib/search');
 
-// use vue instance to handle the search bar
-
 // start db
 let db = new PouchDb('texts');
 // doc format
@@ -20,6 +18,7 @@ let db = new PouchDb('texts');
   _id: uuid,
   preview: 30 chars - beginning of text,
   tags: related tags,
+  title: title of doc,
   text: blob file attachment
 }
 */

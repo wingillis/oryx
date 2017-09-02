@@ -21,11 +21,18 @@ div.codeMirror {
   height: 100%;
 }
 
-
 .window-tags {
   position: relative;
   width: 17%;
   min-width: 130px;
   background-color: white;
   height: 100%;
+}
+
+#search {
+  overflow-y: scroll;
+}
+
+.file-preview {
+  /* do something to prettify */
 }
