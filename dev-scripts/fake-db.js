@@ -1,0 +1,2 @@
+
+const PouchDb = require('pouchdb');
