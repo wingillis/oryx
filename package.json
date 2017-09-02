@@ -2,7 +2,7 @@
   "name": "oryx",
   "version": "0.0.0",
   "description": "Markdown note taking app inspired by bear",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e main.js -o dist/build.js",
     "serve": "http-server -o -c 1 -a localhost",
@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "highlight.js": "^9.12.0",
+    "markdown-it": "^8.4.0",
     "pouchdb": "^6.3.4",
     "vue": "^2.4.2"
   }
