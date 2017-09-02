@@ -5,14 +5,22 @@ const assert = require('assert');
 describe('text', function () {
   describe('find hash tag', function () {
     it('should find a tag with this string', function () {
-      assert.equal('#tag', text.findHashTags('I will send this #tag to you')[0]);
+      var str = 'I will send this #tag to you';
+      var out = text.findHashTags(str);
+      var eqs = {};
+      eqs[str.indexOf('#tag')] = '#tag';
+      assert.deepEqual(eqs, out);
     });
   });
 
   describe('find img tag', function () {
     it('should find an img .md tag and return it', function () {
-      assert.equal('![img](test)', text.findImgTags('this is a bunch ![img](test) of text')[0]);
+      var str = 'this is a bunch ![img](test) of text';
+      var out = text.findImgTags(str);
+      var eqs = {};
+      eqs[str.indexOf('![img](test)')] = 'test';
+      assert.deepEqual(eqs, out);
     });
   });
-  
+
 });

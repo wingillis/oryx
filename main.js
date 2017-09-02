@@ -4,29 +4,15 @@ require('codemirror/mode/javascript/javascript');
 require('codemirror/keymap/vim');
 const codeMirror = require('codemirror');
 const imageHandler = require('./lib/images');
+const textLib = require('./lib/lib-text');
 const PouchDb = require('pouchdb');
 const uuid = require('uuid/v4'); // random uuid
 
-function findImgTags(str) {
-  // returns an object of url and index
-  let output = {};
-  let match;
-  let img_re = /!\[[^\]]+\]\(([^)]+)\)/;
-  while ((match = img_re.exec(str)) != null) {
-    output[match.index] = match[1];
-  }
-  return output;
-}
 
-function findHashTags(str) {
-  // finds hash tags for organizing the notes
-}
-
-// TODO: recursive search for all images (based on url inside)
 function update(editor) {
   let elem, url, pos, line;
   let content = editor.getValue();
-  let output = findImgTags(content);
+  let output = textLib.findImgTags(content);
   if (output != null) {
     let lines = document.getElementsByClassName('CodeMirror-line');
     // go through all options
