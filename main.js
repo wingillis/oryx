@@ -17,10 +17,11 @@ const db = require('./lib/db');
 // idea when an electron app - it needs to be node and file-based
 db.open()
 
-
-
 let editor = new Editor('code');
 let searchBar = new SearchBar('sidebar');
+db.getNewestFile().then(function (resp) {
+  editor.setFile(resp)
+});
 
 function update(editor) {
   let elem, url, pos, line;
