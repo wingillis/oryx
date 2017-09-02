@@ -7,10 +7,25 @@ require('codemirror/keymap/vim');
 const imageHandler = require('./lib/images');
 const PouchDb = require('pouchdb');
 const uuid = require('uuid/v4'); // random uuid
+const Editor = require('./lib/editor');
+const SearchBar = require('./lib/search');
+
+// use vue instance to handle the search bar
 
 // start db
 let db = new PouchDb('texts');
+// doc format
+/*
+{
+  _id: uuid,
+  preview: 30 chars - beginning of text,
+  tags: related tags,
+  text: blob file attachment
+}
+*/
 
+let editor = new Editor('code');
+let searchBar = new SearchBar('search');
 
 function update(editor) {
   let elem, url, pos, line;
