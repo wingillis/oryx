@@ -12,6 +12,22 @@ describe('text', function () {
       assert.deepEqual(eqs, out);
     });
 
+    it('should not grab a header', function () {
+      var str = '# this is a header while #this is a tag';
+      var out = text.findHashTags(str);
+      var eqs = {};
+      eqs[str.indexOf('#this')] = '#this';
+      assert.deepEqual(eqs, out);
+    });
+
+    it('should not grab a double header', function () {
+      var str = '### this is a header while #this is a tag';
+      var out = text.findHashTags(str);
+      var eqs = {};
+      eqs[str.indexOf('#this')] = '#this';
+      assert.deepEqual(eqs, out);
+    });
+
     // TODO: add multiple tags
   });
 

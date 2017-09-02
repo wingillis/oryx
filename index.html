@@ -12,13 +12,13 @@
       <div id="file-lister">
         <div class="file-preview" v-for="f in files">
           <div class="file-title no-overflow">
-            {{ f.doc.title }}
+            {{ f.title }}
           </div>
           <div class="file-pre-text no-overflow">
-            {{ f.doc.preview }}
+            {{ f.preview }}
           </div>
           <div class="tag-container no-overflow">
-            <div class="tag" v-for="tag in f.doc.tags">
+            <div class="tag" v-for="tag in f.tags">
               {{ tag }}
             </div>
           </div>

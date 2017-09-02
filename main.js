@@ -12,55 +12,9 @@ const SearchBar = require('./lib/search');
 
 // singleton
 const db = require('./lib/db');
-// TODO: setPath with real path
-db.open()
 
 let editor = new Editor('code');
 let searchBar = new SearchBar('sidebar');
-db.getNewestFile().then(function (resp) {
-  editor.setFile(resp)
-});
-
-function update(editor) {
-  let elem, url, pos, line;
-  let content = editor.getValue();
-  let output = textLib.findImgTags(content);
-  if (output != null) {
-    let lines = document.getElementsByClassName('CodeMirror-line');
-    // go through all options
-    for (var ind in output) {
-      url = output[ind]; // TODO: handle urls properly
-      pos = editor.posFromIndex(ind);
-      line = lines[pos.line];
-      if (!imageHandler.isAdded(url)) {
-        elem = document.createElement('img');
-        elem.src = 'http://octodex.github.com/images/octobiwan.jpg';
-        elem.className = 'inline-img';
-        line.parentNode.appendChild(elem);
-        imageHandler.addImage(pos.line, url, elem);
-      } else {
-      elem = imageHandler.getImage(url);
-      line.parentNode.appendChild(elem);
-      }
-    }
-  }
-}
-
-function getAllTags () {
-
-}
-
-function listTags () {
-
-}
-
-// on new document, add db entry
-
-// add a 1 sec debounce for adding tags
-var debounceFunc;
-function addTag(tag) {
-  clearTimeout(debounceFunc);
-  debounceFunc = setTimeout(()=>{
-    // pass (for now)
-  }, 1000);
-}
+// db.getNewestFile().then(function (resp) {
+  // editor.setFile(resp)
+// });
