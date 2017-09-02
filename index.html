@@ -11,13 +11,13 @@
       <input id="search-bar" type="text" placeholder="search" v-model="searchInput">
       <div id="file-lister">
         <div class="file-preview" v-for="f in files">
-          <div>
+          <div class="file-title no-overflow">
             {{ f.doc.title }}
           </div>
-          <div>
+          <div class="file-pre-text no-overflow">
             {{ f.doc.preview }}
           </div>
-          <div class="tag-container">
+          <div class="tag-container no-overflow">
             <div class="tag" v-for="tag in f.doc.tags">
               {{ tag }}
             </div>

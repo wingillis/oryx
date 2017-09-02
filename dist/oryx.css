@@ -23,6 +23,14 @@ div.codeMirror {
   height: 100%;
 }
 
+.codeMirror.cm-s-base16-dark {
+  background-image: url('./oryx copy.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: auto 75%;
+}
+
 .window-tags {
   position: relative;
   width: 17%;
@@ -61,16 +69,30 @@ div.codeMirror {
 
 .file-preview {
   margin-right: 3px;
-  margin-top: 5px;
+  margin-top: 4px;
   margin-left: 3px;
   padding: 5px;
   color: #dddddd;
+  background-color: #2a2a2a;
+}
+
+.file-pre-text {
+  margin: 0px;
+  padding-left: 8px;
+  font-size: 0.85em;
+  color: #aaaaaa;
 }
 
 .tag-container {
   margin-top: 5px;
   display: flex;
   flex-direction: row;
+}
+
+.no-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .tag {

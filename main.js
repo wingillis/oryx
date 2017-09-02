@@ -13,8 +13,6 @@ const SearchBar = require('./lib/search');
 // singleton
 const db = require('./lib/db');
 // TODO: setPath with real path
-// NOTE: this current implementation runs in the browser. This is not a good
-// idea when an electron app - it needs to be node and file-based
 db.open()
 
 let editor = new Editor('code');
