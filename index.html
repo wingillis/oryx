@@ -6,15 +6,22 @@
 </head>
 <body>
   <div class="window-container">
-    <div class="window-tags" id="search">
-      <input type="text" placeholder="search" v-model="searchInput">
-      <div class="file-preview" v-for="f in files">
-        <p>
-          {{ f.doc.title }}
-        </p>
-        <p>
-          {{ f.doc.preview }}
-        </p>
+    <div class="window-tags" id="sidebar">
+      <input id="search-bar" type="text" placeholder="search" v-model="searchInput">
+      <div id="file-lister">
+        <div class="file-preview" v-for="f in files">
+          <div>
+            {{ f.doc.title }}
+          </div>
+          <div>
+            {{ f.doc.preview }}
+          </div>
+          <div class="tag-container">
+            <div class="tag" v-for="tag in f.doc.tags">
+              {{ tag }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <textarea id="code"></textarea>
