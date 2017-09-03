@@ -23,6 +23,12 @@ div.codeMirror {
   height: 100%;
 }
 
+.cm-fat-cursor .codeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: rgb(126, 159, 141);
+}
+
 .codeMirror.cm-s-base16-dark {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -43,6 +49,7 @@ div.codeMirror {
   background-color: #222222;
   width: 23%;
   min-width: 140px;
+  font-family: monospace;
 }
 
 #file-lister {
@@ -50,6 +57,7 @@ div.codeMirror {
   flex-grow: 1;
   /*height: 100%;*/
 }
+
 
 #search-bar {
   padding: 8px;
