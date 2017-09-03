@@ -13,4 +13,7 @@ function createWindow () {
   win.loadURL(`file://${__dirname}/index.html`);
 }
 
+// look for an .oryxrc file in the home dir:
+// it will define evernote api keys and stuff for user
+
 app.on('ready', createWindow)
