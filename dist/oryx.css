@@ -24,11 +24,11 @@ div.codeMirror {
 }
 
 .codeMirror.cm-s-base16-dark {
-  background-image: url('./oryx copy.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
-  background-size: auto 75%;
+  /*background-position: center;*/
+  background-position: right 33% bottom 50%;
+  background-size: auto 83%;
 }
 
 .window-tags {

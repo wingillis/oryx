@@ -31,3 +31,20 @@ menu.items[1].submenu.append(new remote.MenuItem({
 }))
 
 remote.Menu.setApplicationMenu(menu);
+
+document.getElementsByClassName('codeMirror')[0].style.backgroundImage = `url('./dist/oryx${getRandomInt(1, 8)}.png')`;
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+document.ondragover = document.ondrop = (evt) => {
+  evt.preventDefault();
+}
+
+document.body.ondrop = (evt) => {
+  editor.insertImgPath(evt.dataTransfer.files[0].path);
+  evt.preventDefault();
+}

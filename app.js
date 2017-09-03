@@ -2,9 +2,9 @@
 // this file controls the electron instance that will run the app
 
 const {app, BrowserWindow, ipcMain} = require('electron');
-require('electron-reload')(__dirname, {
-  ignored: /dev-scripts|node_modules/
-});
+// require('electron-reload')(__dirname, {
+//   ignored: /dev-scripts|node_modules/
+// });
 
 let win;
 
