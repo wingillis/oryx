@@ -58,6 +58,10 @@ div.codeMirror {
   /*height: 100%;*/
 }
 
+#file-lister::-webkit-scrollbar {
+	display: none;
+}
+
 
 #search-bar {
   padding: 8px;

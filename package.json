@@ -4,7 +4,8 @@
   "description": "Markdown note taking app inspired by bear",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "rebuild": "electron-rebuild pouchdb"
   },
   "keywords": [
     "markdown",
