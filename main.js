@@ -8,7 +8,7 @@ const imageHandler = require('./lib/images');
 const uuid = require('uuid/v4'); // random uuid
 const Editor = require('./lib/editor');
 const SearchBar = require('./lib/search');
-const {remote} = require('electron');
+const {remote, ipcRenderer} = require('electron');
 let menu = remote.Menu.getApplicationMenu();
 
 // singleton
@@ -25,9 +25,21 @@ menu.items[1].submenu.append(new remote.MenuItem({
 }));
 
 menu.items[1].submenu.append(new remote.MenuItem({
-  label: 'Find Entry',
+  label: 'Search',
   accelerator: 'CmdOrCtrl+L',
   click: () => {searchBar.focusSearch()}
+}))
+
+menu.items[1].submenu.append(new remote.MenuItem({
+  label: 'Save',
+  accelerator: 'CmdOrCtrl+S',
+  click () {
+    db.getAllNotes().then((allDocs) => {
+      let notes = allDocs.rows.map((el) => { return el.doc })
+      notes = notes.filter((el) => { return el.text != null })
+      ipcRenderer.send('save-notes', notes)
+    })
+  }
 }))
 
 remote.Menu.setApplicationMenu(menu);
