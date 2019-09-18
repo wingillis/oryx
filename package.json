@@ -37,7 +37,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
-    "electron": "^1.7.5",
+    "electron": "^1.8.8",
     "evernote": "^2.0.1-beta",
     "highlight.js": "^9.12.0",
     "htmltoenml": "^1.3.0",
